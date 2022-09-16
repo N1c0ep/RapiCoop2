@@ -12,9 +12,10 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.material.textfield.TextInputLayout;
 
+
 public class Singup_Form extends AppCompatActivity {
 
-    private DatabaseHelper myDb;
+    private RapiCoopDatabaseHelper myDb;
     private TextInputLayout editFullName, editEmail, editPassword;
     private Button btnAddData;
     private Button btnViewAll;
@@ -26,7 +27,7 @@ public class Singup_Form extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_singup_form);
         getSupportActionBar().setTitle("Formulario Registro");
-        myDb=new DatabaseHelper(context: this);
+        myDb=new RapiCoopDatabaseHelper(this);
         editFullName=(TextInputLayout)findViewById(R.id.editText_fullname);
         editEmail=(TextInputLayout)findViewById(R.id.editText_email);
         editPassword=(TextInputLayout)findViewById(R.id.editText_password);
@@ -46,12 +47,12 @@ public class Singup_Form extends AppCompatActivity {
                         user.setFullName(editFullName.getEditText().getText().toString());
                         user.setEmail(editEmail.getEditText().getText().toString());
                         user.setPassword(editPassword.getEditText().getText().toString());
-                        user.setTipo(ValueInt);
+                        user.setTipo(valueInt);
                         boolean isInserted=myDb.insertData(user);
                         if(isInserted)
-                            Toast.makeText( Signup_form.this,  "Informacion registrada", Toast.LENGTH_LONG).show();
+                            Toast.makeText( Singup_Form.this,  "Informacion registrada", Toast.LENGTH_LONG).show();
                         else
-                        Toast.makeText( Signup_form.this,  "Informacion no registrada", Toast.LENGTH_LONG).show();
+                        Toast.makeText( Singup_Form.this,  "Informacion no registrada", Toast.LENGTH_LONG).show();
                     }
                 }
         );
@@ -61,7 +62,7 @@ public class Singup_Form extends AppCompatActivity {
                 new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
-                        Cursor res=myDb.getAllData();
+                        Cursor res=myDb.getAlldata();
                         if(res.getCount()==0){
                             showMessage( "Error", "Nothing found");
                             return;
