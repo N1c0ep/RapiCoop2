@@ -16,4 +16,8 @@ public class Login_form extends AppCompatActivity {
     public void btn_singupForm(View view){
         startActivity(new Intent(getApplicationContext(),Singup_Form.class));
     }
+
+    public void btn_ingresar(View view) {
+        startActivity(new Intent(getApplicationContext(),Usuario.class));
+    }
 }
