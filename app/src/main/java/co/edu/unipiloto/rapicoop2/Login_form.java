@@ -12,12 +12,12 @@ public class Login_form extends AppCompatActivity {
     @Override
     protected void onCreate (Bundle savedInstanceState){
 
-        //usuario = (Button) findViewById(R.id.usuario);
+        usuario = (Button) findViewById(R.id.usuario);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login_form);
         getSupportActionBar().setTitle("Login Form");
 
-        /*usuario.setOnClickListener(new View.OnClickListener(){
+        /*.setOnClickListener(new View.OnClickListener(){
 
             @Override
             public void onClick(View view) {
@@ -29,13 +29,15 @@ public class Login_form extends AppCompatActivity {
     }
 
     public void btn_singupForm(View view){
-        startActivity(new Intent(getApplicationContext(),Singup_Form.class));
+
+        startActivity(new Intent(this,Vendedor.class));
     }
 
-    public void btn_ingresar(View view){
+
+    /*public void btn_ingresar(View view){
         Intent i = new Intent(Login_form.this,Usuario.class);
         startActivity(i);
-    }
+    }*/
 
 
 
