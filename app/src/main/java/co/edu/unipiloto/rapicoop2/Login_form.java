@@ -17,7 +17,7 @@ public class Login_form extends AppCompatActivity {
         setContentView(R.layout.activity_login_form);
         getSupportActionBar().setTitle("Login Form");
 
-        /*usuario.setOnClickListener(new View.OnClickListener(){
+        /*.setOnClickListener(new View.OnClickListener(){
 
             @Override
             public void onClick(View view) {
@@ -30,7 +30,7 @@ public class Login_form extends AppCompatActivity {
 
     public void btn_singupForm(View view){
 
-        startActivity(new Intent(Login_form.this, Vendedor.class));
+        startActivity(new Intent(this,Vendedor.class));
     }
 
 

@@ -19,7 +19,6 @@ public class Vendedor extends AppCompatActivity {
     protected void onCreate (Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_vendedor);
-        getSupportActionBar().setTitle("Vendedor");
 
         etEnviar = findViewById(R.id.editText1);
         etDescripcion = findViewById(R.id.descripcion);
