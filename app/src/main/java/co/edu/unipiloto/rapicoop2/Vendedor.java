@@ -19,6 +19,7 @@ public class Vendedor extends AppCompatActivity {
     protected void onCreate (Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_vendedor);
+        getSupportActionBar().setTitle("Vendedor");
 
         etEnviar = findViewById(R.id.editText1);
         etDescripcion = findViewById(R.id.descripcion);
@@ -27,7 +28,7 @@ public class Vendedor extends AppCompatActivity {
         etComida = findViewById(R.id.nombreComida);
         btnEnviar = findViewById(R.id.button1);
 
-        btnEnviar.setOnClickListener(new View.OnClickListener() {
+        /*btnEnviar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
@@ -38,7 +39,7 @@ public class Vendedor extends AppCompatActivity {
                 intent.putExtras(enviarDatos);
                 startActivity(intent);
             }
-        });
+        });*/
     }
 
 

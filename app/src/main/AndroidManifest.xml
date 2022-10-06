@@ -14,9 +14,11 @@
         android:theme="@style/Theme.RapiCoop2"
         tools:targetApi="31">
         <activity android:name=".Singup_Form" />
+        <activity android:name=".UsuarioHamburguesa" />
+        <activity android:name=".Usuario" />
         <activity android:name=".MainActivity"/>
-        <activity android:name=".Vendedor" />
-        <activity android:name=".Login_form" android:exported="true">
+        <activity android:name=".Login_form" />
+        <activity android:name=".Vendedor" android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
