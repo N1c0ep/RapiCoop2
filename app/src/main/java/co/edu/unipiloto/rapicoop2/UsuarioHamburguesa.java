@@ -15,9 +15,9 @@ public class UsuarioHamburguesa extends AppCompatActivity {
 
         tvDatos = findViewById(R.id.textView2);
 
-        Bundle recibeDatos = getIntent().getExtras();
-        String [] info = recibeDatos.getStringArray("keyDatos");
+ //       Bundle recibeDatos = getIntent().getExtras();
+//        String [] info = recibeDatos.getStringArray("keyDatos");
 
-        tvDatos.setText(info[0]+"\nNombre: " +info[1]+"\nDescripcion: "+ info[2] +"\nPrecio: $"+ info[3]+"\nCantidad: "+info[4]);
+        //tvDatos.setText(info[0]+"\nNombre: " +info[1]+"\nDescripcion: "+ info[2] +"\nPrecio: $"+ info[3]+"\nCantidad: "+info[4]);
     }
 }

@@ -30,14 +30,14 @@ public class Login_form extends AppCompatActivity {
 
     public void btn_singupForm(View view){
 
-        startActivity(new Intent(this,Vendedor.class));
+        startActivity(new Intent(this,Singup_Form.class));
     }
 
 
-    /*public void btn_ingresar(View view){
-        Intent i = new Intent(Login_form.this,Usuario.class);
+    public void btn_ingresar(View view){
+        Intent i = new Intent(Login_form.this,UsuarioHamburguesa.class);
         startActivity(i);
-    }*/
+    }
 
 
 
