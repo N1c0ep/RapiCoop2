@@ -13,7 +13,7 @@ public class Vendedor extends AppCompatActivity {
     EditText etEnviar, etComida, etDescripcion, etPrecio, etCantidad;
     Button btnEnviar;
     String [] datos = new String[]{etEnviar.getText().toString(),etComida.getText().toString(), etDescripcion.getText().toString(),etPrecio.getText().toString(),
-    etCantidad.getText().toString()};
+            etCantidad.getText().toString()};
 
     @Override
     protected void onCreate (Bundle savedInstanceState){
@@ -31,10 +31,8 @@ public class Vendedor extends AppCompatActivity {
         /*btnEnviar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
                 Bundle enviarDatos = new Bundle();
                 enviarDatos.putStringArray("keyDatos", datos);
-
                 Intent intent = new Intent(Vendedor.this, UsuarioHamburguesa.class);
                 intent.putExtras(enviarDatos);
                 startActivity(intent);

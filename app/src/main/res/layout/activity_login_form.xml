@@ -16,6 +16,7 @@
         android:padding="30dp"
         />
     <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/user_login"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:focusable="true"
@@ -26,7 +27,7 @@
         <EditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Correo"
+            android:hint="Usuario"
             android:ems="10"
             android:inputType="text"
             android:textSize="20sp"
@@ -35,6 +36,7 @@
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/user_password"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:focusable="true"

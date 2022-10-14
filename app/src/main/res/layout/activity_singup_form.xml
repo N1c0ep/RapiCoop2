@@ -24,10 +24,27 @@
             android:hint="Ingrese nombre completo"
             android:ems="10"
             android:inputType="text"
-            android:textSize="20sp"
+            android:textSize="10sp"
             />
     </com.google.android.material.textfield.TextInputLayout>
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/editText_userName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        android:textColorHint="@color/colorAccent"
+        >
 
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Ingrese su usuario"
+            android:ems="10"
+            android:inputType="text"
+            android:textSize="10sp"
+            />
+    </com.google.android.material.textfield.TextInputLayout>
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/editText_email"
         android:layout_width="match_parent"
@@ -42,7 +59,7 @@
             android:hint="Correo"
             android:ems="10"
             android:inputType="text"
-            android:textSize="20sp"
+            android:textSize="10sp"
             />
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -61,7 +78,7 @@
             android:hint="Clave"
             android:ems="10"
             android:inputType="textPassword"
-            android:textSize="20sp"
+            android:textSize="10sp"
             />
     </com.google.android.material.textfield.TextInputLayout>
     <com.google.android.material.textfield.TextInputLayout
@@ -80,12 +97,96 @@
             android:hint="Confirmar clave"
             android:ems="10"
             android:inputType="textPassword"
-            android:textSize="20sp"
+            android:textSize="10sp"
+            />
+    </com.google.android.material.textfield.TextInputLayout>
+    <Spinner
+        android:id="@+id/color"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:gravity="center"
+        android:layout_margin="16dp"
+        android:entries="@array/tipo_vendedor"
+        />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/txtLatitud"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        android:textColorHint="@color/colorAccent"
+        >
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Ingrese Latitud"
+            android:ems="10"
+            android:inputType="text"
+            android:textSize="10sp"
             />
     </com.google.android.material.textfield.TextInputLayout>
 
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/txtLongitud"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        android:textColorHint="@color/colorAccent"
+        >
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Ingrese Longitud"
+            android:ems="10"
+            android:inputType="text"
+            android:textSize="10sp"
+            />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/txtDireccion"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        android:textColorHint="@color/colorAccent"
+        >
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Ingrese su Direccion"
+            android:ems="10"
+            android:inputType="text"
+            android:textSize="10sp"
+            />
+    </com.google.android.material.textfield.TextInputLayout>
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/anoNacimiento"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        android:textColorHint="@color/colorAccent"
+        >
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Ingrese su año de nacimiento"
+        android:ems="10"
+        android:inputType="number"
+        android:textSize="10sp"
+        />
+    </com.google.android.material.textfield.TextInputLayout>
+
+
     <RadioGroup
-        android:id="@+id/radioGroup_tipo"
+        android:id="@+id/radioGroup_genero"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
@@ -95,34 +196,34 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Tipo: "
-            android:textSize="20sp"
+            android:textSize="10sp"
             />
         <RadioButton
-            android:id="@+id/radioButton_cliente"
+            android:id="@+id/radioButton_hombre"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="10dp"
-            android:text="Cliente"
+            android:text="Hombre"
             android:textSize="10sp"
 
             />
         <RadioButton
-            android:id="@+id/radioButton_vendedor"
+            android:id="@+id/radioButton_mujer"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="10dp"
-            android:text="Vendedor"
+            android:text="Mujer"
             android:textSize="10sp"
             />
         <RadioButton
-            android:id="@+id/radioButton_repartidor"
+            android:id="@+id/radioButton_otro"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="10dp"
-            android:text="Repartidor"
+            android:text="Otro"
             android:textSize="10sp"
-
             />
+
     </RadioGroup>
     <Button
         android:id="@+id/button_registrar"
@@ -131,7 +232,7 @@
         android:background="@drawable/button_rounded"
         android:text="Registrar"
 
-        android:textSize="22sp"
+        android:textSize="11sp"
         android:textColor="#FFFFFF"
         android:layout_marginTop="10dp"
 
@@ -142,7 +243,7 @@
         android:layout_height="wrap_content"
         android:background="@drawable/button_rounded"
         android:text="Mostrar registro"
-        android:textSize="22sp"
+        android:textSize="11sp"
         android:textColor="#FFFFFF"
         android:layout_marginTop="10dp"
         />
