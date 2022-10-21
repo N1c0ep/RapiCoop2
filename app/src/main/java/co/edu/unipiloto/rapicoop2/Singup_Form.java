@@ -1,20 +1,19 @@
 package co.edu.unipiloto.rapicoop2;
 
+import android.app.Dialog;
 import android.database.Cursor;
 import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.Spinner;
 import android.widget.Toast;
-
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
-
 import com.google.android.material.textfield.TextInputLayout;
-
 import java.time.LocalDate;
 import java.time.Period;
 
@@ -22,13 +21,16 @@ import java.time.Period;
 public class Singup_Form extends AppCompatActivity {
 
     private RapiCoopDatabaseHelper myDb;
-    private TextInputLayout editFullName,editUserName, editEmail, editPassword, editLatitud, editLongitud, editDireccion, editAnoNacimiento;
+    private TextInputLayout editFullName;
+    private TextInputLayout editUserName;
+    private TextInputLayout editEmail;
+    private TextInputLayout editPassword;
+    private EditText editAnoNacimiento;
     private Spinner editTipoUsuario;
-
     private Button btnAddData;
     private Button btnViewAll;
-    private int tipo;
     private String genero;
+    private View view;
 
 
     @Override
@@ -37,40 +39,54 @@ public class Singup_Form extends AppCompatActivity {
         setContentView(R.layout.activity_singup_form);
         getSupportActionBar().setTitle("Formulario Registro");
         myDb=new RapiCoopDatabaseHelper(this);
+        editAnoNacimiento = (EditText) view.findViewById(R.id.etPlannedDate);
+        editAnoNacimiento.setOnClickListener((View.OnClickListener) this);
         editFullName=(TextInputLayout)findViewById(R.id.editText_fullname);
         editUserName=(TextInputLayout)findViewById(R.id.editText_userName);
         editEmail=(TextInputLayout)findViewById(R.id.editText_email);
         editPassword=(TextInputLayout)findViewById(R.id.editText_password);
         editTipoUsuario=(Spinner) findViewById(R.id.color);
-        editLatitud=(TextInputLayout)findViewById(R.id.txtLatitud);
-        editLongitud=(TextInputLayout)findViewById(R.id.txtLongitud);
-        editDireccion=(TextInputLayout)findViewById(R.id.txtDireccion);
-        editAnoNacimiento=(TextInputLayout) findViewById(R.id.anoNacimiento);
+
         btnAddData=(Button)findViewById(R.id.button_registrar);
         btnViewAll=(Button)findViewById(R.id.button_mostrar_registro);
         addData();
         viewAll();
 
+
     }
+
+    public void onClick(View view) {
+        switch (view.getId()) {
+            case R.id.etPlannedDate:
+                showDatePickerDialog();
+                break;
+        }
+    }
+        private void showDatePickerDialog() {
+            DatePickerFragment newFragment = new DatePickerFragment();
+            newFragment.show(getSupportFragmentManager(), "datePicker");
+        }
+
+
     public void addData(){
         btnAddData.setOnClickListener(
                 new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
-                        Integer valueInt= new Integer(tipo);
                         User user=new User();
                         user.setFullName(editFullName.getEditText().getText().toString());
                         user.setUserName(editUserName.getEditText().getText().toString());
                         user.setEmail(editEmail.getEditText().getText().toString());
                         user.setPassword(editPassword.getEditText().getText().toString());
                         user.setRol(editTipoUsuario.getItemAtPosition(editTipoUsuario.getSelectedItemPosition()).toString());
-                        user.setAno_nacimiento(Integer.parseInt(String.valueOf(editAnoNacimiento.getEditText().getText())));
+                        user.setAno_nacimiento(Integer.parseInt(String.valueOf(editAnoNacimiento.getText())));
+
                         user.setGenero(genero);
                         boolean isInserted=myDb.insertData(user);
                         if(isInserted)
                             Toast.makeText( Singup_Form.this,  "Informacion registrada", Toast.LENGTH_LONG).show();
                         else
-                        Toast.makeText( Singup_Form.this,  "Informacion no registrada", Toast.LENGTH_LONG).show();
+                            Toast.makeText( Singup_Form.this,  "Informacion no registrada", Toast.LENGTH_LONG).show();
                     }
                 }
         );
