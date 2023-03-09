@@ -31,7 +31,7 @@ public class RapiCoopDatabaseHelper extends SQLiteOpenHelper {
     @Override
     public void onCreate(SQLiteDatabase db){
         db.execSQL("create table "+TABLE_NAME+"(ID INTEGER PRIMARY KEY AUTOINCREMENT, "+
-                "FULLNAME TEXT,USERNAME TEXT, EMAIL TEXT, PASSWORD TEXT, TIPO_USUARIO TEXT, DIRECCION TEXT, ANO_NACIMIENTO TEXT, GENERO TEXT) ");
+                "FULLNAME TEXT,USERNAME TEXT, EMAIL TEXT, PASSWORD TEXT, TIPO_USUARIO TEXT, DIRECCION TEXT, ANO_NACIMIENTO TEXT, GENERO TEXT, TEMPERATURA TEXT,SINTOMAS TEXT, ACTIVIDAD TEXT, MEDICAMENTOS TEXT) ");
     }
     @Override
     public void onUpgrade(SQLiteDatabase db, int i, int i1){
@@ -51,7 +51,7 @@ public class RapiCoopDatabaseHelper extends SQLiteOpenHelper {
         contentValues.put(COL3,user.getUserName());
         contentValues.put(COL4,user.geteMail());
         contentValues.put(COL5,user.getPassword());
-        contentValues.put(COL6,user.getRolUsuario());
+        contentValues.put(COL6,user.getTipoPaciente());
         contentValues.put(COL7,user.getDireccion());
         contentValues.put(COL8,user.getano_nacimiento());
         contentValues.put(COL9,user.getGenero());

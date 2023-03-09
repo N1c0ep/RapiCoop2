@@ -101,26 +101,53 @@
             />
     </com.google.android.material.textfield.TextInputLayout>
     <Spinner
-        android:id="@+id/color"
+        android:id="@+id/tipo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="40dp"
         android:gravity="center"
         android:layout_margin="16dp"
-        android:entries="@array/tipo_vendedor"
+        android:entries="@array/tipo_paciente"
         />
 
 
 
-    <EditText
-        android:id="@+id/etPlannedDate"
-        android:hint="@string/fecha_nam"
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/txtDireccion"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:inputType="date"
-        android:focusable="false"
-        android:clickable="true"
-        android:maxLines="1" />
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        android:textColorHint="@color/colorAccent"
+        >
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Ingrese su Direccion"
+            android:ems="10"
+            android:inputType="text"
+            android:textSize="10sp"
+            />
+    </com.google.android.material.textfield.TextInputLayout>
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/anoNacimiento"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        android:textColorHint="@color/colorAccent"
+        >
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Ingrese su año de nacimiento"
+            android:ems="10"
+            android:inputType="number"
+            android:textSize="10sp"
+            />
+    </com.google.android.material.textfield.TextInputLayout>
+
 
 
 

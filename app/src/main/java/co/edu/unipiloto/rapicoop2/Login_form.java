@@ -1,12 +1,12 @@
 package co.edu.unipiloto.rapicoop2;
 
-import android.content.Context;
 import android.content.Intent;
 import android.database.Cursor;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
-import android.database.sqlite.SQLiteDatabase;
+import android.widget.EditText;
+
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -14,16 +14,16 @@ import com.google.android.material.textfield.TextInputLayout;
 
 public class Login_form extends AppCompatActivity {
     Button usuario;
+    EditText user;
+    EditText password;
     private RapiCoopDatabaseHelper myDb;
     private TextInputLayout getUser;
-    String user = findViewById(R.id.user_login).toString();
-    String psw = findViewById(R.id.user_password).toString();
-    SQLiteDatabase sqll= myDb.getWritableDatabase();
-    Context context;
-    String TABLE_NAME="Registros_RapiCoop";
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-
+        myDb = new RapiCoopDatabaseHelper(Login_form.this);
+        user = (EditText) findViewById(R.id.user_login);
+        password = (EditText) findViewById(R.id.user_password);
         usuario = (Button) findViewById(R.id.usuario);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login_form);
@@ -35,15 +35,8 @@ public class Login_form extends AppCompatActivity {
 
 
 
-        if(buscarUsuario(user,psw)) {
-            Intent i = new Intent(Login_form.this, UsuarioHamburguesa.class);
-            startActivity(i);
-        }
-        else{
-            showMessage( "Error", "Credenciales invalidas");
+        startActivity(new Intent(this,Sintomas.class));
 
-            return;
-        }
     }
     public void btn_singupForm(View view){
 
@@ -57,19 +50,6 @@ public class Login_form extends AppCompatActivity {
         builder.show();
 
     }
-    public boolean buscarUsuario(String user, String psw){
-        RapiCoopDatabaseHelper rapidb = new RapiCoopDatabaseHelper(context);
-        SQLiteDatabase db = rapidb.getWritableDatabase();
-        Cursor cursorUsuarios = null;
-        String rol = null;
-
-        cursorUsuarios = db.rawQuery("SELECT * FROM " + TABLE_NAME + " WHERE usuario LIKE '" + user + "' AND password LIKE '" + psw + "'",null);
-
-
-        return cursorUsuarios.moveToFirst();
-
-    }
-
 }
 
 

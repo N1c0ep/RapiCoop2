@@ -13,9 +13,9 @@
     <string name="sandwich">Sandwiches</string>
     <string name="tacos">Tacos</string>
     <string name="menu">¿Qué quieres comer?</string>
-    <string-array name="tipo_vendedor">
-        <item>Vendedor</item>
-        <item>Comprador</item>
-        <item>Domiciliario</item>
+    <string-array name="tipo_paciente">
+        <item>Diabetes</item>
+        <item>Hipertensión</item>
+        <item>Insuficiencia Cardiaca</item>
     </string-array>
 </resources>
