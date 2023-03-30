@@ -22,6 +22,8 @@ public class RapiCoopDatabaseHelper extends SQLiteOpenHelper {
     public static final String COL7="DIRECCION";
     public static final String COL8="ANO_NACIMIENTO";
     public static final String COL9="GENERO";
+
+
     private static final String DB_NAME="RapiCoop";
     private static final int DB_VERSION=1;
 

@@ -12,6 +12,7 @@
     <string name="salchipapa">Salchipapa</string>
     <string name="sandwich">Sandwiches</string>
     <string name="tacos">Tacos</string>
+    <string name="Ingresar_glucosa">Ingrese nivel de glucosa en la sangre</string>
     <string name="menu">¿Qué quieres comer?</string>
     <string-array name="tipo_paciente">
         <item>Diabetes</item>

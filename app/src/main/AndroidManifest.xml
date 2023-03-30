@@ -21,6 +21,7 @@
         <activity android:name=".Usuario" />
         <activity android:name=".MainActivity" />
         <activity android:name=".Singup_Form" />
+        <activity android:name=".RegistrarSignos"/>
         <activity
             android:name=".Login_form"
             android:exported="true">
