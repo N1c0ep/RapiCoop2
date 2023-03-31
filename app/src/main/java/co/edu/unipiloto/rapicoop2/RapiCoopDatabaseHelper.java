@@ -22,7 +22,13 @@ public class RapiCoopDatabaseHelper extends SQLiteOpenHelper {
     public static final String COL7="DIRECCION";
     public static final String COL8="ANO_NACIMIENTO";
     public static final String COL9="GENERO";
-
+    public static final String COL10="GLUCOSA";
+    public static final String COL11="PRESION";
+    public static final String COL12="FRECUENCIA";
+    public static final String COL13="TEMPERATURA";
+    public static final String COL14="SINTOMAS";
+    public static final String COL15="ACTIVIDAD";
+    public static final String COL16="MEDICAMENTOS";
 
     private static final String DB_NAME="RapiCoop";
     private static final int DB_VERSION=1;
@@ -33,7 +39,7 @@ public class RapiCoopDatabaseHelper extends SQLiteOpenHelper {
     @Override
     public void onCreate(SQLiteDatabase db){
         db.execSQL("create table "+TABLE_NAME+"(ID INTEGER PRIMARY KEY AUTOINCREMENT, "+
-                "FULLNAME TEXT,USERNAME TEXT, EMAIL TEXT, PASSWORD TEXT, TIPO_USUARIO TEXT, DIRECCION TEXT, ANO_NACIMIENTO TEXT, GENERO TEXT, TEMPERATURA TEXT,SINTOMAS TEXT, ACTIVIDAD TEXT, MEDICAMENTOS TEXT) ");
+                "FULLNAME TEXT,USERNAME TEXT, EMAIL TEXT, PASSWORD TEXT, TIPO_USUARIO TEXT, DIRECCION TEXT, ANO_NACIMIENTO TEXT, GENERO TEXT, GLUCOSA TEXT,PRESION TEXT, FRECUENCIA TEXT, TEMPERATURA TEXT, SINTOMAS TEXT, ACTIVIDAD TEXT, MEDICAMENTOS TEXT) ");
     }
     @Override
     public void onUpgrade(SQLiteDatabase db, int i, int i1){
@@ -57,6 +63,13 @@ public class RapiCoopDatabaseHelper extends SQLiteOpenHelper {
         contentValues.put(COL7,user.getDireccion());
         contentValues.put(COL8,user.getano_nacimiento());
         contentValues.put(COL9,user.getGenero());
+        contentValues.put(COL10,user.getGlucosa());
+        contentValues.put(COL11,user.getPresion());
+        contentValues.put(COL12,user.getFrecuencia());
+        contentValues.put(COL13,user.getTemperatura());
+        contentValues.put(COL14,user.getSintomas());
+        contentValues.put(COL15,user.getActividad());
+        contentValues.put(COL16,user.getMedicamentos());
         long result=db.insert(TABLE_NAME, null, contentValues);
         if(result==1)
             return false;
@@ -71,7 +84,7 @@ public class RapiCoopDatabaseHelper extends SQLiteOpenHelper {
 
     public Cursor getData(int id){
         SQLiteDatabase db = this.getReadableDatabase();
-        Cursor res = db.rawQuery("select * from"+TABLE_NAME+"where id="+id+"",null);
+        Cursor res = db.rawQuery("select * from "+TABLE_NAME+" "+" where id=" +id+"",null);
         return res;
     }
     public Cursor getUser(String user){
@@ -83,5 +96,13 @@ public class RapiCoopDatabaseHelper extends SQLiteOpenHelper {
         SQLiteDatabase db = this.getReadableDatabase();
         Cursor res = db.rawQuery("select * from"+TABLE_NAME+"where "+COL4+"= '"+email+"'",null);
         return res;
+    }
+    public void actualizarUser(String glucosa, String hipertension, String frecuenciaCardiaca, String temperatura, String sintomas, String actividadFisica, String medicamentos, int id ){
+        SQLiteDatabase db = this.getReadableDatabase();
+
+        String updateQuery = "UPDATE " + TABLE_NAME + " SET " + "GLUCOSA" + " = " + glucosa + ", "+ " PRESION" + " = " + hipertension + ", " + "FRECUENCIA" + " = " + frecuenciaCardiaca + ", " + "TEMPERATURA" + " = " + temperatura + ", " + "SINTOMAS" + " = " + sintomas + ", " + "ACTIVIDAD" + " = " + actividadFisica + ", " + "MEDICAMENTOS" + " = " + medicamentos + " WHERE " + "ID" + " = " + id;
+        db.execSQL(updateQuery);
+
+
     }
 }

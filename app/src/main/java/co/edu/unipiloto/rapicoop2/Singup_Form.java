@@ -97,6 +97,14 @@ public class Singup_Form extends AppCompatActivity {
                             buffer.append(": "+res.getString( 6)+"\n");
                             buffer.append(": "+res.getString( 7)+"\n");
                             buffer.append(": "+res.getString( 8)+"\n");
+                            buffer.append(": "+res.getString( 9)+"\n");
+                            buffer.append(": "+res.getString( 10)+"\n");
+                            buffer.append(": "+res.getString( 11)+"\n");
+                            buffer.append(": "+res.getString( 12)+"\n");
+                            buffer.append(": "+res.getString( 13)+"\n");
+                            buffer.append(": "+res.getString( 14)+"\n");
+                            buffer.append(": "+res.getString( 15)+"\n");
+
 
 
 

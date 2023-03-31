@@ -18,7 +18,7 @@ import com.google.android.material.textfield.TextInputLayout;
 public class Login_form extends AppCompatActivity {
 
     private RapiCoopDatabaseHelper myDb;
-    private TextInputLayout getUser;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -53,6 +53,7 @@ public class Login_form extends AppCompatActivity {
 
                     if (usuario1.equals(usuario2)&&clave1.equals(clave)) {
                         Intent intent = new Intent(Login_form.this, RegistrarSignos.class);
+                        intent.putExtra("idUser", id);
                         startActivity(intent);
                         validación=validación++;
                         break;
